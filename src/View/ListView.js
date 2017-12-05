@@ -18,6 +18,7 @@ class ListView extends View {
 
         this._sortField = 'id';
         this._sortDir = 'DESC';
+        this._reloadPage = 0; 
     }
 
     perPage() {
@@ -92,6 +93,15 @@ class ListView extends View {
 
         return this;
     }
+    
+    reloadPage() { 
+        if (arguments.length) { 
+            this._reloadPage = arguments[0]; return this; 
+        } 
+           return this._reloadPage; 
+        }
+    }
+
 
     batchActions(actions) {
         if (!arguments.length) {
